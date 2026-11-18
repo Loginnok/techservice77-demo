@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
+  <meta name="theme-color" content="#171917">
+  <meta name="description" content="Демо сайта автосервиса «Техсервис77» на Каширском шоссе. Выберите услугу и заполните форму записи.">
+  <title>Техсервис77 — ТО и ремонт на Каширском шоссе</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-row">
+      <a href="#top" class="brand" aria-label="Техсервис77, начало страницы">Техсервис<span>77</span></a>
+      <nav aria-label="Навигация">
+        <a href="#services">Услуги</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="tel:+79637691610" class="header-phone">+7 963 769-16-10</a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-photo">
+        <img src="workshop.webp" alt="Автомобиль на подъёмнике в ремонтной мастерской" width="1420" height="947" fetchpriority="high">
+      </div>
+      <div class="wrap hero-content">
+        <div class="hero-copy">
+          <p class="location">Москва · Каширское шоссе</p>
+          <h1 id="hero-title">ТО и ремонт<br>автомобилей</h1>
+          <p class="hero-text">Пора на ТО, появился стук или нужно поменять шины? Укажите модель машины и что нужно сделать.</p>
+          <a class="button" href="#booking">Записаться в сервис <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="wrap services" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 id="services-title">Что нужно сделать?</h2>
+        <p>Выберите услугу, чтобы подставить её в заявку.</p>
+      </div>
+      <div class="service-grid">
+        <a href="#booking" class="service" data-service="Техническое обслуживание"><strong>Плановое ТО</strong><span>Масло, фильтры и расходники</span><span class="arrow" aria-hidden="true"></span></a>
+        <a href="#booking" class="service" data-service="Диагностика и ремонт"><strong>Диагностика и ремонт</strong><span>Стук, вибрация, ошибки на панели</span><span class="arrow" aria-hidden="true"></span></a>
+        <a href="#booking" class="service" data-service="Шиномонтаж"><strong>Шиномонтаж</strong><span>Замена шин и балансировка</span><span class="arrow" aria-hidden="true"></span></a>
+        <a href="#booking" class="service" data-service="Развал-схождение"><strong>Развал-схождение</strong><span>Регулировка углов установки колёс</span><span class="arrow" aria-hidden="true"></span></a>
+        <a href="#booking" class="service" data-service="Кузовной ремонт"><strong>Кузовной ремонт</strong><span>Оценка повреждений кузова</span><span class="arrow" aria-hidden="true"></span></a>
+      </div>
+    </section>
+    <section id="booking" class="booking" aria-labelledby="booking-title">
+      <div class="wrap booking-grid">
+        <div class="booking-copy">
+          <h2 id="booking-title">Заявка <br>на запись</h2>
+          <p>Если пока не знаете, какая услуга нужна, выберите «Нужна консультация» и опишите, что беспокоит.</p>
+          <p class="demo-note">Демо-форма. Данные остаются в браузере.</p>
+        </div>
+        <div class="form-panel">
+          <form id="booking-form">
+            <div class="fields">
+              <label>Марка и модель
+                <input name="car" placeholder="Например, Kia Rio" maxlength="80" required>
+              </label>
+              <label>Услуга
+                <select name="service" id="service" required>
+                  <option value="">Выберите услугу</option>
+                  <option>Техническое обслуживание</option>
+                  <option>Диагностика и ремонт</option>
+                  <option>Шиномонтаж</option>
+                  <option>Развал-схождение</option>
+                  <option>Кузовной ремонт</option>
+                  <option>Нужна консультация</option>
+                </select>
+              </label>
+            </div>
+            <label>Телефон
+              <input name="phone" type="tel" autocomplete="tel" maxlength="26" placeholder="+7 900 000-00-00" required>
+            </label>
+            <label>Комментарий <span class="optional">(по желанию)</span>
+              <textarea name="note" rows="3" maxlength="400" placeholder="Например, слышен стук на неровной дороге"></textarea>
+            </label>
+            <button class="button" type="submit">Проверить заявку <span class="arrow" aria-hidden="true"></span></button>
+          </form>
+          <div id="result" hidden>
+            <h3 id="result-title" tabindex="-1">Заявка заполнена</h3>
+            <p>В демо данные никуда не отправляются.</p>
+            <dl id="summary"></dl>
+            <button id="edit" class="button" type="button">Редактировать <span class="arrow" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contacts" class="wrap contacts" aria-labelledby="contacts-title">
+      <h2 id="contacts-title">Как нас найти</h2>
+      <div>
+        <p>Москва, Каширское шоссе, 41, стр. 2</p>
+        <a href="https://yandex.ru/maps/?text=Техсервис77%20Москва%20Каширское%20шоссе%2041%20строение%202">Открыть на карте <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="contact-phone" href="tel:+79637691610">+7 963 769-16-10</a>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <span>Демонстрационная версия сайта</span>
+    <a href="https://www.pexels.com/photo/white-car-in-a-garage-for-check-up-8986138/">Иллюстративное фото · Артём Подрез / Pexels</a>
+  </footer>
+</body>
+</html>
